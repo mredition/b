@@ -1,4 +1,3 @@
-#Credit: @r4v4n4
 """Emoji
 
 Available Commands:
@@ -37,15 +36,15 @@ async def _(event):
             "⬛⬛⬛\n⬛🔄⬛\n⬛⬛⬛",
             "⬛⬆️⬛\n⬛🔄⬛\n⬛⬛⬛",
             "⬛⬆️↗️\n⬛🔄⬛\n⬛⬛⬛",
-            "⬛⬆️↗️\n⬛🔄➡️\n⬛⬛⬛",    
+            "⬛⬆️↗️\n⬛🔄➡️\n⬛⬛⬛",          
             "⬛⬆️↗️\n⬛🔄➡️\n⬛⬛↘️",
             "⬛⬆️↗️\n⬛🔄➡️\n⬛⬇️↘️",
             "⬛⬆️↗️\n⬛🔄➡️\n↙️⬇️↘️",
             "⬛⬆️↗️\n⬅️🔄➡️\n↙️⬇️↘️",
             "↖️⬆️↗️\n⬅️🔄➡️\n↙️⬇️↘️",
-            "**Chat Message Exported To** `./Inpu/`",
-            "**Chat Message Exported To** `./Inpu/homework/`",
-            "**Chat Message Exported To** `./Inpu/homework/groupchat.txt`",
+            "**Chat Message Exported To** `./MrPerfect/`",
+            "**Chat Message Exported To** `./MrPerfect/chatbackup/`",
+            "**Chat Message Exported To** `./MrPerfect/chatbackup/groupchat.txt`",
             "__Legend is leaving this chat.....! Gaand Marao Bc..__",
             "__Legend is leaving this chat.....! Gaand Marao Bc..__"
 

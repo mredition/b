@@ -1,12 +1,4 @@
-"""
-
-Available Commands:
-
-.sux
-
-.fuk
-
-.kiss"""
+"""COMMAND : .fu, .sux, .kess"""
 
 from telethon import events
 
@@ -30,7 +22,7 @@ async def _(event):
 
     input_str = event.pattern_match.group(1)
 
-    if input_str == "fuk":
+    if input_str == "fu":
 
         await event.edit(input_str)
 
@@ -90,8 +82,18 @@ async def _(event):
             await event.edit(animation_chars[i % 4])
 
 
-""
 
+"""Emoji
+
+Available Commands:
+
+.emoji shrug
+
+.emoji apple
+
+.emoji :/
+
+.emoji -_-"""
 
 from telethon import events
 
@@ -115,7 +117,7 @@ async def _(event):
 
     input_str = event.pattern_match.group(1)
 
-    if input_str == "kiss":
+    if input_str == "kess":
 
         await event.edit(input_str)
 

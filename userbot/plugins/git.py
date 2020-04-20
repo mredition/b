@@ -1,3 +1,15 @@
+"""Emoji
+
+Available Commands:
+
+.emoji shrug
+
+.emoji apple
+
+.emoji :/
+
+.emoji -_-"""
+
 from telethon import events
 
 import asyncio
@@ -26,7 +38,7 @@ async def _(event):
 
         animation_chars = [
 
-            "https://github.com/somto811/UniBorg",
+            "https://github.com/ravana69/UniBorg",
 
             "https://github.com/spechide/UniBorg"
         ]

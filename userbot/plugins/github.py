@@ -2,7 +2,7 @@
 Syntax: .github USERNAME"""
 from telethon import events
 import requests
-from userbot.utils import admin_cmd
+from uniborg.util import admin_cmd
 
 
 @borg.on(admin_cmd("github (.*)"))
@@ -33,8 +33,8 @@ Location: {}
 Bio: {}
 Profile Created: {}""".format(name, html_url, gh_type, company, blog, location, bio, created_at),
             file=avatar_url,
-            force_document=False,
-            allow_cache=False,
+            force_document=as_document,
+            allow_cache=True,
             reply_to=event
         )
         await event.delete()
