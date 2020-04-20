@@ -1,4 +1,4 @@
-"""Update UserBot code (for raynaldbot)
+"""Update UserBot code (for UniBorg)
 Syntax: .update
 \nAll Credits goes to © @Three_Cube_TeKnoways
 \nFor this awasome plugin.\nPorted from PpaperPlane Extended"""
@@ -13,7 +13,7 @@ import sys
 # from git.exc import NoSuchPathError
 
 # from .. import bot
-# from userbot.utils import register
+# from uniborg.events import register
 
 import git
 import asyncio
@@ -29,7 +29,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon import events
 
-from userbot.utils import admin_cmd
+from uniborg.util import admin_cmd
 
 
 from contextlib import suppress
@@ -44,7 +44,7 @@ IS_SELECTED_DIFFERENT_BRANCH = (
     "in this case, Updater is unable to identify the branch to be updated."
     "please check out to an official branch, and re-start the updater."
 )
-OFFICIAL_UPSTREAM_REPO = "https://github.com/Dark-Princ3/X-tra-Telegram"
+OFFICIAL_UPSTREAM_REPO = "https://github.com/ravana69/pornhub/"
 BOT_IS_UP_TO_DATE = "`The userbot is up-to-date.\nThank you for Using this Service.`"
 NEW_BOT_UP_DATE_FOUND = (
     "new update found for {branch_name}\n"
@@ -126,22 +126,22 @@ async def updater(message):
     temp_upstream_remote.fetch(active_branch_name)
     repo.git.reset("--hard", "FETCH_HEAD")
 
-    if Var.HEROKU_API_KEY is not None:
+    if Config.HEROKU_API_KEY is not None:
         import heroku3
-        heroku = heroku3.from_key(Var.HEROKU_API_KEY)
+        heroku = heroku3.from_key(Config.HEROKU_API_KEY)
         heroku_applications = heroku.apps()
         if len(heroku_applications) >= 1:
-            if Var.HEROKU_APP_NAME is not None:
+            if Config.HEROKU_APP_NAME is not None:
                 heroku_app = None
                 for i in heroku_applications:
-                    if i.name == Var.HEROKU_APP_NAME:
+                    if i.name == Config.HEROKU_APP_NAME:
                         heroku_app = i
                 if heroku_app is None:
                     await message.edit("Invalid APP Name. Please set the name of your bot in heroku in the var `HEROKU_APP_NAME.`")
                     return
                 heroku_git_url = heroku_app.git_url.replace(
                     "https://",
-                    "https://api:" + Var.HEROKU_API_KEY + "@"
+                    "https://api:" + Config.HEROKU_API_KEY + "@"
                 )
                 if "heroku" in repo.remotes:
                     remote = repo.remote("heroku")
@@ -168,7 +168,7 @@ def generate_change_log(git_repo, diff_marker):
 
 async def deploy_start(tgbot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
-    await message.edit("Updating and Deploying New Branch. Please wait for 5 minutes then use `.alive` to check if i'm working or not.")
+    await message.edit("Restarted! do `.alive or .info or .helpme` to check if I am Working or not?")
     await remote.push(refspec=refspec)
     await tgbot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)

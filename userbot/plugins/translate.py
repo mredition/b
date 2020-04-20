@@ -5,10 +5,10 @@ Available Commands:
 
 import emoji
 from googletrans import Translator
-from userbot.utils import admin_cmd
+from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd("tr ?(.*)"))
+@borg.on(admin_cmd(pattern="tr ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
