@@ -5,7 +5,7 @@ import asyncio
 from datetime import datetime
 import os
 import requests
-from userbot.utils import admin_cmd
+from uniborg.util import admin_cmd
 
 
 def progress(current, total):
@@ -51,4 +51,4 @@ async def _(event):
         nurl = f"https://del.dog/v/{r['key']}"
         await event.edit("Dogged to {} in {} seconds. GoTo Original URL: {}".format(url, ms, nurl))
     else:
-        await event.edit("Dogged to {} in {} seconds".format(url, ms))
+        await event.edit("[Link nahi milega BSDK]({})\n\n__Link Generated In__ **69** __seconds__".format(url, ms))
