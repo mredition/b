@@ -1,6 +1,6 @@
 """Commands: .web --<anonfiles, anonymousfiles, megaupload>"""
 
-# credits: SNAPDRAGON (@s_n_a_p_s)
+# modded by MR-EDITION (@mredition)
 from telethon import events
 import subprocess
 import os
