@@ -1,10 +1,12 @@
 from telethon import events
 import asyncio
-from userbot.utils import admin_cmd
+from uniborg.util import admin_cmd
 
 
 @borg.on(admin_cmd(pattern="dump ?(.*)"))
 async def _(message):
+    if message.fwd_from:
+        return
     try:
         obj = message.pattern_match.group(1)
         if len(obj) != 3:
@@ -24,4 +26,26 @@ async def _(message):
             try:
                 await message.edit(something_else)
             except errors.MessageIdInvalidError:
+                await message.edit("u dun goofed m8")
                 return
+
+            
+@borg.on(admin_cmd(pattern="dump all ?(.*)"))
+async def _(event):
+    if event.fwd_from:
+        return
+    from extra_util.trashguy import TrashGuy
+    an = TrashGuy(event.pattern_match.group(1))
+    for i in an:
+      await event.edit(i)
+      await asyncio.sleep(0.3)
+    
+@borg.on(admin_cmd(pattern="dump gandu ?(.*)"))
+async def _(event):
+    if event.fwd_from:
+        return
+    from extra_util.trashguy import TrashGuy
+    an = TrashGuy(event.pattern_match.group(1))
+    for i in an:
+      await event.edit(i)
+      await asyncio.sleep(2)

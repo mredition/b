@@ -7,11 +7,12 @@ Available Commands:
 .listblacklist
 .rmblacklist"""
 import asyncio
+import io
 import re
-import userbot.plugins.sql_helper.blacklist_sql as sql
+import sql_helpers.blacklist_sql as sql
 from telethon import events, utils
 from telethon.tl import types, functions
-from userbot.utils import admin_cmd
+from uniborg.util import admin_cmd
 
 
 @borg.on(events.NewMessage(incoming=True))

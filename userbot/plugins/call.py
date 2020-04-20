@@ -1,14 +1,4 @@
-"""Emoji
-
-Available Commands:
-
-.emoji shrug
-
-.emoji apple
-
-.emoji :/
-
-.emoji -_-"""
+"""COMMAND : ./cull"""
 
 from telethon import events
 
@@ -26,13 +16,13 @@ async def _(event):
 
         return
 
-    animation_interval = 3
+    animation_interval = 5
 
     animation_ttl = range(0, 18)
 
     input_str = event.pattern_match.group(1)
 
-    if input_str == "call":
+    if input_str == "/cull":
 
         await event.edit(input_str)
 
@@ -41,20 +31,20 @@ async def _(event):
             "`Connecting To Telegram Headquarters...`",
             "`Call Connected.`",
             "`Telegram: Hello This is Telegram HQ. Who is this?`",
-            "`Me: Yo this is` @Dark_Princ3 ,`Please Connect me to my lil bro,Pavel Durov`",
+            "`Me: Yo this is` @itz_Sj_Dude ,`Please Connect me to Pavel Durov Shukla`",
             "`User Authorised.`",
-            "`Calling Pavel Durov`  `At +916969696969`",
+            "`Calling Pavel Durov Shukla  At +916969696969`",
             "`Private  Call Connected...`",
             "`Me: Hello Sir, Please Ban This Telegram Account.`",    
-            "`Pavel: May I Know Who Is This?`",
-            "`Me: Yo Brah, I Am` @Dark_Princ3 ",
-            "`Pavel: OMG!!! Long time no see, Wassup Brother...\nI'll Make Sure That Guy Account Will Get Blocked Within 24Hrs.`",
+            "`Durov: May I Know Who Is This?`",
+            "`Me: Yo Brah, I Am` @Itz_Sj_Dude",
+            "`Durov: OMG!!! I Am FAN Of You Sir...\nI'll Make Sure That Guy Account Will Get Blocked Within 24Hrs.`",
             "`Me: Thanks, See You Later Brah.`",
-            "`Pavel: Please Don't Thank Brah, Telegram Is Our's. Just Gimme A Call When You Become Free.`",
+            "`Durov: Please Don't Thank Sur, Telegram Is Your's. Just Gimme A Call When You Become Free.`",
             "`Me: Is There Any Issue/Emergency???`",
-            "`Pavel: Yes Sur, There Is A Bug In Telegram v69.6.9.\nI Am Not Able To Fix It. If Possible, Please Help Fix The Bug.`",
+            "`Durov: Yes Sur, There Is A Bug In Telegram v5.8.0.\nI Am Not Able To Fix It. If Possible, Please Help Fix The Bug.`",
             "`Me: Send Me The App On My Telegram Account, I Will Fix The Bug & Send You.`",
-            "`Pavel: Sure Sur \nTC Bye Bye :)`",
+            "`Durov: Sure Sur \nTC Bye Bye :)`",
             "`Private Call Disconnected.`"
         ]
 

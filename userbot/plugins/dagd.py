@@ -1,14 +1,11 @@
-"""DA.GD helpers in @UniBorg
-Available Commands:
-.isup URL
-.dns google.com
-.url <long url>
-.unshort <short url>"""
+"""COMMAND : .dns , .link, .unshort , .myip , .myisp , .myhead , .mywho , .myup"""
+
+
 from telethon import events
 import os
 import requests
 import json
-from userbot.utils import admin_cmd
+from uniborg.util import admin_cmd
 
 
 @borg.on(admin_cmd("dns (.*)"))
@@ -24,7 +21,7 @@ async def _(event):
         await event.edit("i can't seem to find {} on the internet".format(input_str))
 
 
-@borg.on(admin_cmd("url (.*)"))
+@borg.on(admin_cmd("link (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -49,3 +46,77 @@ async def _(event):
         await event.edit("Input URL: {}\nReDirected URL: {}".format(input_str, r.headers["Location"]))
     else:
         await event.edit("Input URL {} returned status_code {}".format(input_str, r.status_code))
+
+
+@borg.on(admin_cmd("myip(.*)"))
+async def _(event):
+    if event.fwd_from:
+        return
+    input_str = event.pattern_match.group(1)
+    sample_url = "https://da.gd/ip".format(input_str)
+    response_api = requests.get(sample_url).text
+    if response_api:
+        await event.edit("**Ip Of My Userbot**{}\n{}".format(input_str, response_api))
+    else:
+        await event.edit("i can't seem to find {} on the internet".format(input_str))
+
+
+@borg.on(admin_cmd("myisp(.*)"))
+async def _(event):
+    if event.fwd_from:
+        return
+    input_str = event.pattern_match.group(1)
+    sample_url = "https://da.gd/isp".format(input_str)
+    response_api = requests.get(sample_url).text
+    if response_api:
+        await event.edit("**My Current ISP**{}\n{}".format(input_str, response_api))
+    else:
+        await event.edit("i can't seem to find {} on the internet".format(input_str))
+
+@borg.on(admin_cmd("mywho (.*)"))
+async def _(event):
+    if event.fwd_from:
+        return
+    input_str = event.pattern_match.group(1)
+    sample_url = "https://da.gd/w/{}".format(input_str)
+    response_api = requests.get(sample_url).text
+    if response_api:
+        await event.edit("**Whois**\n{}\n{}".format(input_str, response_api))
+    else:
+        await event.edit("i can't seem to find {} on the internet".format(input_str))
+
+@borg.on(admin_cmd("myhead (.*)"))
+async def _(event):
+    if event.fwd_from:
+        return
+    input_str = event.pattern_match.group(1)
+    sample_url = "https://da.gd/headers/{}".format(input_str)
+    response_api = requests.get(sample_url).text
+    if response_api:
+        await event.edit("**Header**\n{}\n{}".format(input_str, response_api))
+    else:
+        await event.edit("i can't seem to find {} on the internet".format(input_str))
+
+@borg.on(admin_cmd("myup (.*)"))
+async def _(event):
+    if event.fwd_from:
+        return
+    input_str = event.pattern_match.group(1)
+    sample_url = "https://da.gd/up/{}".format(input_str)
+    response_api = requests.get(sample_url).text
+    if response_api:
+        await event.edit("**Is Website Up????**\n{}\n{}".format(input_str, response_api))
+    else:
+        await event.edit("i can't seem to find {} on the internet".format(input_str))
+
+@borg.on(admin_cmd("fast(.*)"))
+async def _(event):
+    if event.fwd_from:
+        return
+    input_str = event.pattern_match.group(1)
+    sample_url = "https://tools.keycdn.com/geo".format(input_str)
+    response_api = requests.get(sample_url).text
+    if response_api:
+        await event.edit("**Is Website Up????**\n{}\n{}".format(input_str, response_api))
+    else:
+        await event.edit("i can't seem to find {} on the internet".format(input_str))
